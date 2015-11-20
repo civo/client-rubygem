@@ -1,4 +1,5 @@
 command "accounts" do |c|
+  c.description = "List known accounts (CIVO-INTERNAL-USE ONLY)"
   c.action do |args, options|
     begin
       accounts = Civo::Account.all
@@ -14,6 +15,7 @@ command "accounts" do |c|
 end
 
 command "accounts:create" do |c|
+  c.description = "Create an account (CIVO-INTERNAL-USE ONLY)"
   c.example "Creates an account called 'testuser'", 'civo accounts:create testuser'
   c.action do |args, options|
     begin
@@ -26,6 +28,7 @@ command "accounts:create" do |c|
 end
 
 command "accounts:reset" do |c|
+  c.description = "Reset the API Key for an account (CIVO-INTERNAL-USE ONLY)"
   c.example "Resets the account called 'testuser' with a new API key", 'civo accounts:reset testuser'
   c.action do |args, options|
     begin
@@ -38,6 +41,7 @@ command "accounts:reset" do |c|
 end
 
 command "accounts:remove" do |c|
+  c.description = "Remove an account (and all instances, networks, etc) (CIVO-INTERNAL-USE ONLY)"
   c.example "Removes an account called 'testuser'", 'civo accounts:remove testuser'
   c.action do |args, options|
     begin

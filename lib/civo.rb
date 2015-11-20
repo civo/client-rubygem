@@ -10,5 +10,6 @@ module Civo
     autoload :Account, "#{ENGINE_ROOT}/app/models/civo/account"
     autoload :Base, "#{ENGINE_ROOT}/app/models/civo/base"
     autoload :SshKey, "#{ENGINE_ROOT}/app/models/civo/ssh_key"
+    autoload :Quota, "#{ENGINE_ROOT}/app/models/civo/quota"
   end
 end

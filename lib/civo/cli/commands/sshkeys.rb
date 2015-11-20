@@ -1,4 +1,5 @@
 command "sshkeys" do |c|
+  c.description = "List the SSH public keys you've uploaded"
   c.action do |args, options|
     begin
       sshkeys = Civo::SshKey.all
@@ -14,6 +15,7 @@ command "sshkeys" do |c|
 end
 
 command "sshkeys:upload" do |c|
+  c.description = "Upload an SSH public key for installing in to new instances"
   c.example "Uploads an SSH public key, calling it 'default' from file '~/.ssh/id_rsa.pub'", 'civo sshkeys:upload default ~/.ssh/id_rsa.pub'
   c.action do |args, options|
     pub_key = File.read(args[1])
@@ -27,6 +29,7 @@ command "sshkeys:upload" do |c|
 end
 
 command "sshkeys:remove" do |c|
+  c.description = "Remove an SSH public key from the list you've uploaded"
   c.example "Removes an SSH public key called 'testuser'", 'civo sshkeys:remove testuser'
   c.action do |args, options|
     begin

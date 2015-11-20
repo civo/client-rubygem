@@ -33,6 +33,10 @@ module Civo
       parse["meta"]["url"]
     end
 
+    def self.admin?
+      parse["meta"]["admin"] == "true"
+    end
+
     def self.update(config)
       @config = config
       self
