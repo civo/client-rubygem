@@ -7,7 +7,30 @@ ENGINE_PATH = File.expand_path('../../lib/civo/engine', __FILE__)
 # Set up gems listed in the Gemfile.
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 require 'bundler/setup' if File.exist?(ENV['BUNDLE_GEMFILE'])
+require 'commander/import'
 
-require 'rails/all'
+program :version, '0.0.1'
+program :description, 'Civo CLI and API client library'
 
-puts "Hello world"
+command "test:something" do |c|
+  c.syntax = 'yourfile test:something [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Yourfile::Commands::Test:something
+    puts "Hello world"
+  end
+end
+
+command "else" do |c|
+  c.syntax = 'yourfile else [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Yourfile::Commands::Else
+  end
+end
