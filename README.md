@@ -54,7 +54,8 @@ region = Civo::Region.all.first.code
 template = Civo::Template.all.first.id
 Civo::SshKey.create(name: "default", public_key: File.read("~/.ssh/id_dsa.pub"))
 
-instance = Civo::Instance.create(hostname: "text.example.com", size: size, region: region, template: template, public_ip: true, ssh_key: "default")
+instance = Civo::Instance.create(hostname: "text.example.com", size: size, region: region, 
+  template: template, public_ip: true, ssh_key: "default")
 ```
 
 The API library consists of a handful of [Flexirest](https://github.com/andyjeffries/flexirest) classes that implement the Civo API. There is full documentation on the API available at https://api.civo.com/doc/.
