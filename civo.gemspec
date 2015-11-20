@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.2.4"
 
   s.add_dependency "flexirest"
+  s.add_dependency "toml"
   s.add_dependency "commander"
 end
