@@ -9,5 +9,3 @@ module Civo
 end
 
 Flexirest::Base.base_url = Civo::Config.api_url
-Flexirest::Base.verbose!
-Flexirest::Logger.logfile = "flexirest.log"
