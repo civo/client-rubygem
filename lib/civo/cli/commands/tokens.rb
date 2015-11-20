@@ -10,10 +10,9 @@ command "tokens" do |c|
 end
 
 command "tokens:save" do |c|
-  c.option "--token TOKEN", String, "Stores the API token"
-  c.option "--name NAME", String, "Sets the name for this API token"
+  c.example "Saves a token called 'master' with API key 'key_goes_here'", 'civo tokens:save master key_goes_here'
   c.action do |args, options|
-    Civo::Token.save(options.name, options.token)
+    Civo::Token.save(args[0], args[1])
   end
 end
 

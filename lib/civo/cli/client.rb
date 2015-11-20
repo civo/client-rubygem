@@ -1,7 +1,7 @@
 module Civo
   class Client
     def self.tabulate(hash, titles)
-      longest_key_length = hash.keys.max_by(&:length).length
+      longest_key_length = hash.keys.max_by(&:length).try(:length) || 5
 
       default = hash.delete("**DEFAULT**")
       puts "%-#{longest_key_length}s %s" % [titles[0], titles[1]]

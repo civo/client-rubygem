@@ -16,3 +16,4 @@ program :description, 'Civo CLI and API client library'
 
 require_relative "#{ENGINE_ROOT}/lib/civo/cli/commands/tokens.rb"
 require_relative "#{ENGINE_ROOT}/lib/civo/cli/commands/accounts.rb"
+require_relative "#{ENGINE_ROOT}/lib/civo/cli/commands/sshkeys.rb"
