@@ -7,4 +7,3 @@ module Civo
 end
 
 Flexirest::Base.base_url = ENV["CIVO_URL"] || Civo::Config.api_url
-Flexirest::Logger.logfile = "flexirest.log"
