@@ -44,7 +44,11 @@ module Civo
       data.each do |record|
         row = []
         columns.each do |k, v|
-          row << "%-#{columns[k][:max_width]}s" % record.send(k)
+          value = record.send(k)
+          if value.is_a? Array
+            value = value.join(", ")
+          end
+          row << "%-#{columns[k][:max_width]}s" % value
         end
         puts (row.join(" | "))
       end

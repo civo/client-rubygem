@@ -9,3 +9,15 @@ command "sizes" do |c|
     end
   end
 end
+
+command "sizes:reset" do |c|
+  c.description = "Reset available instance sizes"
+  c.action do |args, options|
+    begin
+      Civo::Size.reset
+      puts "Standard sizes reset in Openstack"
+    rescue Flexirest::HTTPUnauthorisedClientException, Flexirest::HTTPForbiddenClientException
+      puts "Access denied to your default token, ensure it's set correctly with 'civo tokens'"
+    end
+  end
+end
