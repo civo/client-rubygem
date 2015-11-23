@@ -18,5 +18,36 @@ module Civo
         puts
       end
     end
+
+    def self.tabulate_flexirest(data, mappings)
+      columns = mappings.dup
+      columns.each do |k, nice|
+        columns[k] = {max_width: (nice.length > 5 ? nice.length : 5), label: nice }
+      end
+
+      data.each do |record|
+        columns.each do |k, v|
+          length = record.send(k).to_s.length
+          if record.send(k).to_s.length > v[:max_width]
+            v[:max_width] = length
+          end
+        end
+      end
+
+      puts (columns.keys.map do |k|
+        "%-#{columns[k][:max_width]}s" % columns[k][:label]
+      end.to_a.join(" | "))
+      puts (columns.keys.map do |k|
+        "-" * columns[k][:max_width]
+      end.to_a.join("-+-"))
+
+      data.each do |record|
+        row = []
+        columns.each do |k, v|
+          row << "%-#{columns[k][:max_width]}s" % record.send(k)
+        end
+        puts (row.join(" | "))
+      end
+    end
   end
 end

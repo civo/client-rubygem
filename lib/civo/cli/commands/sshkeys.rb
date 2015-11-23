@@ -3,11 +3,7 @@ command "sshkeys" do |c|
   c.action do |args, options|
     begin
       sshkeys = Civo::SshKey.all
-      data = {}
-      sshkeys.each do |sshkey|
-        data[sshkey.name] = sshkey.label
-      end
-      Civo::Client.tabulate data, ["Name", "SSH Key Label"]
+      Civo::Client.tabulate_flexirest sshkeys, {name: "Name", label: "SSH Key Label"}
     rescue Flexirest::HTTPUnauthorisedClientException, Flexirest::HTTPForbiddenClientException
       puts "Access denied to your default token, ensure it's set correctly with 'civo tokens'"
     end
