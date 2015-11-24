@@ -34,12 +34,8 @@ module Civo
         end
       end
 
-      puts (columns.keys.map do |k|
-        "%-#{columns[k][:max_width]}s" % columns[k][:label]
-      end.to_a.join(" | "))
-      puts (columns.keys.map do |k|
-        "-" * columns[k][:max_width]
-      end.to_a.join("-+-"))
+      puts columns.keys.map {|k| "%-#{columns[k][:max_width]}s" % columns[k][:label] }.to_a.join(" | ")
+      puts columns.keys.map {|k| "-" * columns[k][:max_width] }.to_a.join("-+-")
 
       data.each do |record|
         row = []
