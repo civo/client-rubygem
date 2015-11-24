@@ -1,5 +1,5 @@
 module Civo
-  class Base < Flexirest::Base
+  class Base < ::Flexirest::Base
     before_request do |name, request|
       request.headers["Authorization"] = "bearer #{ENV["CIVO_TOKEN"] || Civo::Token.default}"
     end

@@ -1,5 +1,6 @@
 if defined?(Rails)
   require "civo/engine"
+  require "flexirest"
 end
 
 module Civo

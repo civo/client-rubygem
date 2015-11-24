@@ -26,7 +26,7 @@ module Civo
     def self.parse
       ensure_file_exists!
 
-      @config = TOML.load_file(FILENAME)
+      @config = ::TOML.load_file(FILENAME)
     end
 
     def self.api_url
