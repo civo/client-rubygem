@@ -13,3 +13,4 @@ command "regions" do |c|
     end
   end
 end
+alias_command "region", "regions"

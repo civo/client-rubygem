@@ -9,3 +9,4 @@ command "templates" do |c|
     end
   end
 end
+alias_command "template", "templates"

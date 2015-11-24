@@ -15,3 +15,20 @@ RDoc::Task.new(:rdoc) do |rdoc|
 end
 
 Bundler::GemHelper.install_tasks
+
+task :console do
+  require 'irb'
+  require 'irb/completion'
+  ENGINE_ROOT = File.expand_path('..', __FILE__)
+  ENGINE_PATH = File.expand_path('../lib/civo/engine', __FILE__)
+
+  # Set up gems listed in the Gemfile.
+  ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
+  require 'bundler/setup' if File.exist?(ENV['BUNDLE_GEMFILE'])
+  require 'commander/import'
+  require 'toml'
+  require 'flexirest'
+  require_relative "#{ENGINE_ROOT}/lib/civo.rb"
+  ARGV.clear
+  IRB.start
+end

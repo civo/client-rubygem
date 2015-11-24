@@ -9,6 +9,7 @@ command "accounts" do |c|
     end
   end
 end
+alias_command "account", "accounts"
 
 command "accounts:create" do |c|
   c.description = "Create an account (CIVO-INTERNAL-USE ONLY)"
@@ -22,6 +23,7 @@ command "accounts:create" do |c|
     end
   end
 end
+alias_command "account:create", "accounts:create"
 
 command "accounts:reset" do |c|
   c.description = "Reset the API Key for an account (CIVO-INTERNAL-USE ONLY)"
@@ -35,6 +37,7 @@ command "accounts:reset" do |c|
     end
   end
 end
+alias_command "account:reset", "accounts:reset"
 
 command "accounts:remove" do |c|
   c.description = "Remove an account (and all instances, networks, etc) (CIVO-INTERNAL-USE ONLY)"
@@ -56,3 +59,6 @@ command "accounts:remove" do |c|
     end
   end
 end
+alias_command "account:remove", "accounts:remove"
+alias_command "accounts:delete", "accounts:remove"
+alias_command "account:delete", "accounts:remove"

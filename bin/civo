@@ -11,7 +11,7 @@ require 'toml'
 require 'flexirest'
 require_relative "#{ENGINE_ROOT}/lib/civo.rb"
 
-program :version, '0.0.1'
+program :version, Civo::VERSION
 program :description, 'Civo CLI and API client library'
 
 require_relative "#{ENGINE_ROOT}/lib/civo/cli/commands/tokens.rb"

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (0.1.4)
+    civo (0.1.5)
       commander
       flexirest (~> 1.2.2)
       toml
@@ -47,3 +47,6 @@ PLATFORMS
 
 DEPENDENCIES
   civo!
+
+BUNDLED WITH
+   1.10.6

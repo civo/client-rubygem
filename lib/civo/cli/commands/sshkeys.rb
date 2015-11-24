@@ -9,6 +9,7 @@ command "sshkeys" do |c|
     end
   end
 end
+alias_command "sshkey", "sshkeys"
 
 command "sshkeys:upload" do |c|
   c.description = "Upload an SSH public key for installing in to new instances"
@@ -23,6 +24,9 @@ command "sshkeys:upload" do |c|
     end
   end
 end
+alias_command "sshkeys:create", "sshkeys:upload"
+alias_command "sshkey:upload", "sshkeys:upload"
+alias_command "sshkey:create", "sshkeys:upload"
 
 command "sshkeys:remove" do |c|
   c.description = "Remove an SSH public key from the list you've uploaded"
@@ -44,3 +48,6 @@ command "sshkeys:remove" do |c|
     end
   end
 end
+alias_command "sshkey:remove", "sshkeys:remove"
+alias_command "sshkey:delete", "sshkeys:remove"
+alias_command "sshkeys:delete", "sshkeys:remove"

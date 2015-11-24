@@ -9,6 +9,7 @@ command "sizes" do |c|
     end
   end
 end
+# alias_command "sizes", "size"
 
 command "sizes:reset" do |c|
   c.description = "Reset available instance sizes"
@@ -21,3 +22,5 @@ command "sizes:reset" do |c|
     end
   end
 end
+
+alias_command "size:reset", "sizes:reset"

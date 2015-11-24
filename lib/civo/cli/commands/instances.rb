@@ -15,6 +15,7 @@ command "instances" do |c|
     end
   end
 end
+alias_command "instance", "instances"
 
 command "instances:create" do |c|
   c.description = "Create an instance"
@@ -45,23 +46,11 @@ command "instances:create" do |c|
     end
   end
 end
-
-command "instances:reset" do |c|
-  c.description = "Reset the API Key for an account"
-  c.example "Resets the account called 'testuser' with a new API key", 'civo instances:reset testuser'
-  c.action do |args, options|
-    begin
-      account = Civo::Instance.reset(name: args.first)
-      puts "Account '#{args.first}' reset, the new API key is '#{account.api_key}'"
-    rescue Flexirest::HTTPUnauthorisedClientException, Flexirest::HTTPForbiddenClientException
-      puts "Access denied to your default token, ensure it's set correctly with 'civo tokens'"
-    end
-  end
-end
+alias_command "instance:create", "instances:create"
 
 command "instances:remove" do |c|
-  c.description = "Remove an account (and all instances, networks, etc)"
-  c.example "Removes an account called 'testuser'", 'civo instances:remove testuser'
+  c.description = "Remove an instance by hostname or id"
+  c.example "Removes an instance called 'test.example.com'", 'civo instances:remove test.example.com'
   c.action do |args, options|
     begin
       if args.first[/(\w{8}(-\w{4}){3}-\w{12}?)/]
@@ -85,3 +74,6 @@ command "instances:remove" do |c|
     end
   end
 end
+alias_command "instance:remove", "instances:remove"
+alias_command "instances:delete", "instances:remove"
+alias_command "instance:delete", "instances:remove"

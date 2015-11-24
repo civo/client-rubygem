@@ -9,6 +9,7 @@ command "tokens" do |c|
     end
   end
 end
+alias_command "token", "tokens"
 
 command "tokens:save" do |c|
   c.description = "Save an API token supplied by Civo.com"
@@ -17,6 +18,7 @@ command "tokens:save" do |c|
     Civo::Token.save(args[0], args[1])
   end
 end
+alias_command "token:save", "tokens:save"
 
 command "tokens:default" do |c|
   c.description = "Set the default token from the list you have saved"
@@ -25,6 +27,9 @@ command "tokens:default" do |c|
     Civo::Token.set_default(args[0])
   end
 end
+alias_command "tokens:use", "tokens:default"
+alias_command "token:use", "tokens:default"
+alias_command "token:default", "tokens:default"
 
 command "tokens:remove" do |c|
   c.description = "Remove a token from the list you have saved"
@@ -33,3 +38,4 @@ command "tokens:remove" do |c|
     Civo::Token.remove(args[0])
   end
 end
+alias_command "token:remove", "tokens:remove"
