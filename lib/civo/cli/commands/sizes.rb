@@ -3,7 +3,7 @@ command "sizes" do |c|
   c.action do |args, options|
     begin
       sizes = Civo::Size.all
-      Civo::Client.tabulate_flexirest sizes, {Name: "Size", Description: "Description"}
+      Civo::Client.tabulate_flexirest sizes, {name: "Size", description: "Description"}
     rescue Flexirest::HTTPUnauthorisedClientException, Flexirest::HTTPForbiddenClientException
       puts "Access denied to your default token, ensure it's set correctly with 'civo tokens'"
     end
