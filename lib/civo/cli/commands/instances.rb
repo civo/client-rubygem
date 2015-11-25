@@ -59,11 +59,11 @@ command "instances:remove" do |c|
         instance = Civo::Instance.all.detect {|i| i.hostname == args.first}
         id = instance.id
       end
-      account = Civo::Instance.remove(id: id)
-      if account.result == "ok"
-        puts "Account '#{args.first}' has been removed."
+      instance = Civo::Instance.remove(id: id)
+      if instance.result == "ok"
+        puts "Instance '#{args.first}' has been removed."
       else
-        puts "Failed to delete that account: #{account.inspect}"
+        puts "Failed to delete that instance: #{instance.inspect}"
       end
     rescue Flexirest::HTTPUnauthorisedClientException, Flexirest::HTTPForbiddenClientException
       puts "Access denied to your default token, ensure it's set correctly with 'civo tokens'"
@@ -77,3 +77,64 @@ end
 alias_command "instance:remove", "instances:remove"
 alias_command "instances:delete", "instances:remove"
 alias_command "instance:delete", "instances:remove"
+
+command "instances:upgrade" do |c|
+  c.description = "Upgrade an instance by hostname or id"
+  c.option "--size STRING", String, "The size from 'civo sizes', must be larger than the current size"
+  c.example "Upgrades an instance called 'test.example.com' to `g1.large` size", 'civo instances:upgrade test.example.com --size g1.large'
+  c.action do |args, options|
+    begin
+      if args.first[/(\w{8}(-\w{4}){3}-\w{12}?)/]
+        id = args.first
+      else
+        instance = Civo::Instance.all.detect {|i| i.hostname == args.first}
+        id = instance.id
+      end
+      instance = Civo::Instance.upgrade(id: id, size: options.size)
+      if instance.result == "ok"
+        puts "Instance '#{args.first}' is being upgraded to #{options.size}."
+      else
+        puts "Failed to upgrade that instance: #{instance.inspect}"
+      end
+    rescue Flexirest::HTTPUnauthorisedClientException, Flexirest::HTTPForbiddenClientException
+      puts "Access denied to your default token, ensure it's set correctly with 'civo tokens'"
+    rescue Flexirest::HTTPNotFoundClientException => e
+      puts "Couldn't find that account to remove, maybe it's already been removed?"
+    rescue Flexirest::HTTPServerException => e
+      puts "Unable to remove #{e.result.reason}"
+    end
+  end
+end
+alias_command "instance:upgrade", "instances:upgrade"
+alias_command "instances:resize", "instances:upgrade"
+alias_command "instance:resize", "instances:upgrade"
+
+command "instances:reboot" do |c|
+  c.description = "Reboot an instance by hostname or id"
+  c.example "Reboot an instance called 'test.example.com'", 'civo instances:reboot test.example.com'
+  c.action do |args, options|
+    begin
+      if args.first[/(\w{8}(-\w{4}){3}-\w{12}?)/]
+        id = args.first
+      else
+        instance = Civo::Instance.all.detect {|i| i.hostname == args.first}
+        id = instance.id
+      end
+      instance = Civo::Instance.reboot(id: id)
+      if instance.result == "ok"
+        puts "Instance '#{args.first}' is being rebooted."
+      else
+        puts "Failed to reboot that instance: #{instance.inspect}"
+      end
+    rescue Flexirest::HTTPUnauthorisedClientException, Flexirest::HTTPForbiddenClientException
+      puts "Access denied to your default token, ensure it's set correctly with 'civo tokens'"
+    rescue Flexirest::HTTPNotFoundClientException => e
+      puts "Couldn't find that account to remove, maybe it's already been removed?"
+    rescue Flexirest::HTTPServerException => e
+      puts "Unable to remove #{e.result.reason}"
+    end
+  end
+end
+alias_command "instance:reboot", "instances:reboot"
+alias_command "instances:restart", "instances:reboot"
+alias_command "instance:restart", "instances:reboot"
