@@ -10,11 +10,11 @@ require 'commander/import'
 require 'toml'
 require 'flexirest'
 require_relative "#{ENGINE_ROOT}/lib/civo.rb"
+require_relative "#{ENGINE_ROOT}/lib/civo/version.rb"
 
 program :version, Civo::VERSION
 program :description, 'Civo CLI and API client library'
 
-require_relative "#{ENGINE_ROOT}/lib/civo/cli/commands/tokens.rb"
 require_relative "#{ENGINE_ROOT}/lib/civo/cli/commands/accounts.rb"
 require_relative "#{ENGINE_ROOT}/lib/civo/cli/commands/sshkeys.rb"
 require_relative "#{ENGINE_ROOT}/lib/civo/cli/commands/quota.rb"
