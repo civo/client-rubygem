@@ -8,7 +8,13 @@ module Civo
     put :upgrade, "/v1/instances/:id", requires: [:size, :id]
 
     def ip_addresses
-      self._attributes[:ip_addresses].items rescue ""
+      @ip_addresses ||= (self._attributes[:ip_addresses].items rescue []).map do |ip|
+        if ip.public_ip
+          "#{ip.private_ip}=>#{ip.public_ip}"
+        else
+          "#{ip.private_ip}"
+        end
+      end.join(", ")
     end
   end
 end

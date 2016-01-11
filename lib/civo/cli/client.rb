@@ -27,6 +27,9 @@ module Civo
 
       data.each do |record|
         columns.each do |k, v|
+          if block_given?
+            yield record
+          end
           length = record.send(k).to_s.length
           if record.send(k).to_s.length > v[:max_width]
             v[:max_width] = length
