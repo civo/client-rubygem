@@ -15,7 +15,7 @@ command "sshkeys:upload" do |c|
   c.description = "Upload an SSH public key for installing in to new instances"
   c.example "Uploads an SSH public key, calling it 'default' from file '~/.ssh/id_rsa.pub'", 'civo sshkeys:upload default ~/.ssh/id_rsa.pub'
   c.action do |args, options|
-    pub_key = File.read(args[1])
+    pub_key = File.read(File.expand_path(args[1]))
     begin
       Civo::SshKey.create(name: args.first, public_key: pub_key)
       puts "SSH key '#{args.first}' uploaded."
