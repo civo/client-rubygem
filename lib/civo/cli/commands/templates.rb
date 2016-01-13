@@ -28,8 +28,10 @@ if Civo::Config.admin?
       params[:image_id] = options.image_id if options.image_id
       params[:short_description] = options.short_description if options.short_description
       params[:description] = options.description if options.description
-      cloud_init_file = File.expand_path(options.cloud_init_file)
-      params[:cloud_config] = File.read(cloud_init_file) if options.cloud_init_file && File.exist?(cloud_init_file)
+      if options.cloud_init_file
+        cloud_init_file = File.expand_path(options.cloud_init_file)
+        params[:cloud_config] = File.read(cloud_init_file) if File.exist?(cloud_init_file)
+      end
       begin
         Civo::Template.create(params)
         puts "Template '#{args.first}' updated."
@@ -54,12 +56,14 @@ if Civo::Config.admin?
       params = {
         id: args[0]
       }
-      cloud_init_file = File.expand_path(options.cloud_init_file)
       params[:name] = options.name if options.name
       params[:image_id] = options.image_id if options.image_id
       params[:short_description] = options.short_description if options.short_description
       params[:description] = options.description if options.description
-      params[:cloud_config] = File.read(cloud_init_file) if options.cloud_init_file && File.exist?(cloud_init_file)
+      if options.cloud_init_file
+        cloud_init_file = File.expand_path(options.cloud_init_file)
+        params[:cloud_config] = File.read(cloud_init_file) if File.exist?(cloud_init_file)
+      end
       begin
         Civo::Template.save(params)
         puts "Template '#{args.first}' updated."
