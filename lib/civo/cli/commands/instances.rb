@@ -3,7 +3,7 @@ command "instances" do |c|
   c.action do |args, options|
     begin
       instances = Civo::Instance.all
-      Civo::Client.tabulate_flexirest instances, {id: "ID", hostname: "Hostname", size: "Size", ip_addresses: "IP Addresses", status: "Status", initial_user: "User", initial_password: "Password"}
+      Civo::Client.tabulate_flexirest instances, {id: "ID", hostname: "Hostname", size: "Size", nice_ip_addresses: "IP Addresses", status: "Status", initial_user: "User", initial_password: "Password"}
     rescue Flexirest::HTTPServerException => e
       puts "An error occurred: #{e.result.reason}"
       exit 3

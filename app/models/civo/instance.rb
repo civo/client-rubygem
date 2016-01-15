@@ -10,7 +10,7 @@ module Civo
     post :reboot, "/v1/instances/:id/reboots", requires: [:id]
     put :upgrade, "/v1/instances/:id", requires: [:size, :id]
 
-    def ip_addresses
+    def nice_ip_addresses
       @ip_addresses ||= (self._attributes[:ip_addresses].items rescue []).map do |ip|
         if ip.public_ip
           "#{ip.private_ip}=>#{ip.public_ip}"
