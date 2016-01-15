@@ -1,6 +1,7 @@
 module Civo
   class Instance < Base
     get :all, "/v1/instances"
+    get :find, "/v1/instances/:id", requires: [:id]
     post :create, "/v1/instances", requires: [:hostname, :size, :region, :ssh_key],
       defaults: {public_ip: true, template: "ubuntu-14.04", initial_user: "civo"}
     delete :remove, "/v1/instances/:id", requires: [:id]
