@@ -16,5 +16,6 @@ module Civo
     autoload :Region, "#{ENGINE_ROOT}/app/models/civo/region"
     autoload :Template, "#{ENGINE_ROOT}/app/models/civo/template"
     autoload :Instance, "#{ENGINE_ROOT}/app/models/civo/instance"
+    autoload :Ip, "#{ENGINE_ROOT}/app/models/civo/ip"
   end
 end
