@@ -14,9 +14,7 @@ Gem::Specification.new do |s|
   s.description = "A command-line client and API access classes for civo.com"
   s.license     = "MIT"
 
-  s.executables << 'civo'
-
-  s.files = Dir["{app,bin,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "flexirest", "~> 1.2.2"
