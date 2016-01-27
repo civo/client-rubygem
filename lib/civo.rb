@@ -4,9 +4,6 @@ if defined?(Rails)
 end
 
 module Civo
-  autoload :Token, "civo/cli/token"
-  autoload :Config, "civo/cli/config"
-  autoload :Client, "civo/cli/client"
   unless defined?(Rails)
     autoload :Account, "#{ENGINE_ROOT}/app/models/civo/account"
     autoload :Base, "#{ENGINE_ROOT}/app/models/civo/base"
