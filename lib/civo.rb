@@ -3,6 +3,8 @@ if defined?(Rails)
   require "flexirest"
 end
 
+ENGINE_ROOT = File.expand_path("#{File.dirname(__FILE__)}/../")
+
 module Civo
   unless defined?(Rails)
     autoload :Account, "#{ENGINE_ROOT}/app/models/civo/account"
