@@ -9,7 +9,7 @@ module Civo
       "direction" => "inbound",
       "restriction" => "allow"
     }]
-    put :create, "/v1/firewalls/:name/rules", required: [:name, :protocol, :start_port, :end_port,
+    put :create, "/v1/firewalls/:name/rules", required: [:name, :protocol, :start_port,
       :cidr, :direction, :restriction], fake: {
       "result" => "success"
     }
