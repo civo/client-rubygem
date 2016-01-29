@@ -14,6 +14,7 @@ module Civo
     autoload :Size, "#{ENGINE_ROOT}/app/models/civo/size.rb"
     autoload :Region, "#{ENGINE_ROOT}/app/models/civo/region"
     autoload :Template, "#{ENGINE_ROOT}/app/models/civo/template"
+    autoload :Snapshot, "#{ENGINE_ROOT}/app/models/civo/snapshot"
     autoload :Instance, "#{ENGINE_ROOT}/app/models/civo/instance"
     autoload :Ip, "#{ENGINE_ROOT}/app/models/civo/ip"
   end

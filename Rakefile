@@ -17,6 +17,8 @@ end
 Bundler::GemHelper.install_tasks
 
 task :console do
+  ENV["CIVO_URL"] ||= "https://api.civo.com"
+
   require 'irb'
   require 'irb/completion'
   ENGINE_ROOT = File.expand_path('..', __FILE__)
@@ -29,6 +31,7 @@ task :console do
   require 'toml'
   require 'flexirest'
   require_relative "#{ENGINE_ROOT}/lib/civo.rb"
+
   ARGV.clear
   IRB.start
 end
