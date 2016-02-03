@@ -12,6 +12,7 @@ module Civo
     put :start, "/v1/instances/:id/start", requires: [:id]
     put :upgrade, "/v1/instances/:id", requires: [:size, :id]
     put :restore, "/v1/instances/:id/restore", requires: [:snapshot, :id]
+    put :firewall, "/v1/instances/:id/firewall", requires: [:name, :id]
 
     def nice_ip_addresses
       @ip_addresses ||= (self._attributes[:ip_addresses].items rescue []).map do |ip|
