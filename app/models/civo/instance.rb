@@ -8,6 +8,7 @@ module Civo
     post :reboot, "/v1/instances/:id/reboots", requires: [:id]
     post :hard_reboot, "/v1/instances/:id/hard_reboots", requires: [:id]
     post :soft_reboot, "/v1/instances/:id/soft_reboots", requires: [:id]
+    put :rebuild, "/v1/instances/:id/rebuild", requires: [:id]
     put :stop, "/v1/instances/:id/stop", requires: [:id]
     put :start, "/v1/instances/:id/start", requires: [:id]
     put :upgrade, "/v1/instances/:id", requires: [:size, :id]
