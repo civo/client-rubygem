@@ -7,5 +7,6 @@ module Civo
     post :login, "/v1/users/login"
     put :flags, "/v1/users/:id/flags"
     put :update, "/v1/users/:id"
+    get :find, "/v1/users/:id"
   end
 end
