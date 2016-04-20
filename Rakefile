@@ -21,7 +21,7 @@ task :console do
 
   require 'irb'
   require 'irb/completion'
-  ENGINE_ROOT = File.expand_path('..', __FILE__)
+  CIVO_ENGINE_ROOT = File.expand_path('..', __FILE__)
   ENGINE_PATH = File.expand_path('../lib/civo/engine', __FILE__)
 
   # Set up gems listed in the Gemfile.
@@ -30,7 +30,7 @@ task :console do
   require 'commander/import'
   require 'toml'
   require 'flexirest'
-  require_relative "#{ENGINE_ROOT}/lib/civo.rb"
+  require_relative "#{CIVO_ENGINE_ROOT}/lib/civo.rb"
 
   ARGV.clear
   IRB.start
