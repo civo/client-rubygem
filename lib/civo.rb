@@ -8,6 +8,7 @@ CIVO_ENGINE_ROOT = File.expand_path("#{File.dirname(__FILE__)}/../")
 module Civo
   unless defined?(Rails)
     autoload :Account, "#{CIVO_ENGINE_ROOT}/app/models/civo/account"
+    autoload :Action, "#{CIVO_ENGINE_ROOT}/app/models/civo/action"
     autoload :Base, "#{CIVO_ENGINE_ROOT}/app/models/civo/base"
     autoload :SshKey, "#{CIVO_ENGINE_ROOT}/app/models/civo/ssh_key"
     autoload :Quota, "#{CIVO_ENGINE_ROOT}/app/models/civo/quota"
