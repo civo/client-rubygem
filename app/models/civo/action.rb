@@ -1,6 +1,6 @@
 module Civo
   class Action < Base
-    get :all, "/v1/actions"
-    post :create, "/v1/actions"
+    get :all, "/v#{ENV["CIVO_API_VERSION"] || "1"}/actions"
+    post :create, "/v#{ENV["CIVO_API_VERSION"] || "1"}/actions"
   end
 end
