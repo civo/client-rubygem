@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (0.5.0)
+    civo (0.5.1)
       commander
       flexirest (>= 1.2.2)
       toml
