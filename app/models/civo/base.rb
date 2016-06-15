@@ -7,3 +7,4 @@ module Civo
 end
 
 Flexirest::Base.base_url = ENV["CIVO_URL"]
+Flexirest::Base.verbose! if ENV["CIVO_VERBOSE"]
