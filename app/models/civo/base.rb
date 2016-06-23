@@ -15,11 +15,11 @@ module Civo
         return
       end
 
-      user_id = request.post_params[:user_id] # Don't delete the param in case it's needed by an action
+      user_id = (request.post_params[:user_id] || request.get_params[:user_id]) # Don't delete the param in case it's needed by an action
       if user_id.present?
         request.headers["X-Civo-UserID"] = user_id
       end
-      account_id = request.post_params[:account_id] # Don't delete the param in case it's needed by an action
+      account_id = (request.post_params[:account_id] || request.get_params[:account_id]) # Don't delete the param in case it's needed by an action
       if account_id.present?
         request.headers["X-Civo-AccountID"] = account_id
       end
