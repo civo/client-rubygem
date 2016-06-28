@@ -9,5 +9,8 @@ module Civo
     put :flags, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users/:id/flags"
     put :save, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users"
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users/:id"
+    if ENV["CIVO_API_VERSION"] == "2"
+      get :all, "/v2/users/"
+    end
   end
 end
