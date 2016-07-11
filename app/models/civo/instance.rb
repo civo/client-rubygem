@@ -4,6 +4,7 @@ module Civo
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id", requires: [:id]
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances", requires: [:hostname, :size, :region],
       defaults: {public_ip: true, template: "ubuntu-14.04", initial_user: "civo"}
+    put :tags, "/v2/instances/:id/tags", requires: [:tags]
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id", requires: [:id]
     post :reboot, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/reboots", requires: [:id]
     post :hard_reboot, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/hard_reboots", requires: [:id]
