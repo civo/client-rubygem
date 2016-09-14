@@ -9,7 +9,7 @@ module Civo
     post :member_invite, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships/:user_id", requires: %i{id user_id email_address}
     put :member_status, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships/:user_id", requires: %i{id user_id status}
     get :members, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships", requires: %i{id}
-    post :permissions, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships", requires: %i{id email_address permissions}
+    post :permissions, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships", requires: %i{email_address permissions}
     delete :member_remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships/:user_id", requires: %i{id user_id}
   end
 end
