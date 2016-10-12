@@ -12,5 +12,9 @@ module Civo
     if ENV["CIVO_API_VERSION"] == "2"
       get :all, "/v2/users"
     end
+
+    def to_partial_path
+      "civo/user"
+    end
   end
 end

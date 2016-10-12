@@ -6,5 +6,9 @@ module Civo
     if ENV["CIVO_API_VERSION"] == "2"
       put :update, "/v2/firewalls/:id"
     end
+
+    def to_partial_path
+      "civo/firewall"
+    end
   end
 end

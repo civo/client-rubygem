@@ -4,5 +4,9 @@ module Civo
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/snapshots/:name", required: [:name]
     put :create, "/v#{ENV["CIVO_API_VERSION"] || "1"}/snapshots/:name", required: [:name, :instance_id]
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/snapshots/:name", required: [:name]
+
+    def to_partial_path
+      "civo/snapshot"
+    end
   end
 end

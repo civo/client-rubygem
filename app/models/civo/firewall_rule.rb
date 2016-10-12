@@ -11,5 +11,9 @@ module Civo
         :cidr, :direction]
       delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/firewalls/:name/rules/:id", required: [:name, :id]
     end
+
+    def to_partial_path
+      "civo/firewall_rule"
+    end
   end
 end

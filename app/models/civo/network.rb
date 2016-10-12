@@ -11,5 +11,9 @@ module Civo
       put :update, "/v1/networks/:name", required: [:name]
       delete :remove, "/v1/networks/:name", required: [:name]
     end
+
+    def to_partial_path
+      "civo/network"
+    end
   end
 end

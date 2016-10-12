@@ -26,5 +26,9 @@ module Civo
         end
       end.join(", ")
     end
+
+    def to_partial_path
+      "civo/instance"
+    end
   end
 end

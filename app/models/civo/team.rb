@@ -11,5 +11,9 @@ module Civo
     get :members, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships", requires: %i{id}
     post :permissions, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships", requires: %i{email_address permissions}
     delete :member_remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/teams/:id/memberships/:user_id", requires: %i{id user_id}
+
+    def to_partial_path
+      "civo/team"
+    end
   end
 end
