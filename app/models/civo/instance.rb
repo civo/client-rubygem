@@ -13,7 +13,7 @@ module Civo
     put :rebuild, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/rebuild", requires: [:id]
     put :stop, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/stop", requires: [:id]
     put :start, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/start", requires: [:id]
-    put :upgrade, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id", requires: [:size, :id]
+    put :upgrade, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/resize", requires: [:size, :id]
     put :restore, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/restore", requires: [:snapshot, :id]
     put :firewall, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/firewall", requires: [:name, :id]
 
