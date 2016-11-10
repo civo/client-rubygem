@@ -3,7 +3,7 @@ module Civo
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances"
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id", requires: [:id]
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances", requires: [:hostname, :size, :region],
-      defaults: {public_ip: true, template: "ubuntu-14.04", initial_user: "civo"}
+      defaults: {public_ip: true, template: "ubuntu-14.04", initial_user: "civo"}, timeout: 30
     put :tags, "/v2/instances/:id/tags", requires: [:tags]
     put :rename, "/v2/instances/:id", requires: [:name]
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id", requires: [:id]
