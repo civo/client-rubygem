@@ -1,6 +1,7 @@
 module Civo
   class Instance < Base
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances"
+    get :high_cpu, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/high_cpu"
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id", requires: [:id]
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances", requires: [:hostname, :size, :region],
       defaults: {public_ip: true, template: "ubuntu-14.04", initial_user: "civo"}, timeout: 30
