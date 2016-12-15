@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (0.7.7)
+    civo (0.7.9)
       commander
       flexirest (>= 1.2.2)
       toml
@@ -15,7 +15,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     blankslate (2.1.2.4)
-    commander (4.4.0)
+    commander (4.4.1)
       highline (~> 1.7.2)
     concurrent-ruby (1.0.2)
     crack (0.4.3)
@@ -29,7 +29,7 @@ GEM
       multi_json
     highline (1.7.8)
     i18n (0.7.0)
-    minitest (5.10.0)
+    minitest (5.10.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     parslet (1.5.0)
@@ -50,4 +50,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   1.13.3
+   1.13.6
