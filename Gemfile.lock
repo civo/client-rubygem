@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (0.8.2)
+    civo (0.8.3)
       commander
       flexirest (>= 1.2.2)
       toml
@@ -50,4 +50,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   1.14.3
+   1.14.6
