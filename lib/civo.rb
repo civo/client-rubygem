@@ -18,6 +18,8 @@ module Civo
     autoload :Snapshot, "#{CIVO_ENGINE_ROOT}/app/models/civo/snapshot"
     autoload :Firewall, "#{CIVO_ENGINE_ROOT}/app/models/civo/firewall"
     autoload :FirewallRule, "#{CIVO_ENGINE_ROOT}/app/models/civo/firewall_rule"
+    autoload :DnsDomain, "#{CIVO_ENGINE_ROOT}/app/models/civo/dns_domain"
+    autoload :DnsRecord, "#{CIVO_ENGINE_ROOT}/app/models/civo/dns_record"
     autoload :Instance, "#{CIVO_ENGINE_ROOT}/app/models/civo/instance"
     autoload :Ip, "#{CIVO_ENGINE_ROOT}/app/models/civo/ip"
   end

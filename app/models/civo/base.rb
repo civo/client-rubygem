@@ -1,5 +1,6 @@
 module Civo
   class Base < ::Flexirest::Base
+    verbose!
     before_request :authorization_token
     before_request :administration_set_user
 
