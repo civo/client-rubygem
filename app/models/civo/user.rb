@@ -11,6 +11,7 @@ module Civo
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users/:id"
     if ENV["CIVO_API_VERSION"] == "2"
       get :all, "/v2/users"
+      get :find_by_token, "/v2/users/token/:token"
     end
 
     def to_partial_path
