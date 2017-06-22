@@ -7,7 +7,7 @@ module Civo
     post :token, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users/token"
     post :login, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users/login"
     put :flags, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users/:id/flags"
-    put :save, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users"
+    put :save, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users/:id"
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/users/:id"
     if ENV["CIVO_API_VERSION"] == "2"
       get :all, "/v2/users"
