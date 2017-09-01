@@ -6,7 +6,7 @@ module Civo
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts", requires: [:name]
     put :reset, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id", requires: [:id]
     put :save, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts"
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id", requires: [:id]
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id", requires: [:id], send_delete_body: true
 
     def to_partial_path
       "civo/account"
