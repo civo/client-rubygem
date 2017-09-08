@@ -3,7 +3,7 @@ PATH
   specs:
     civo (0.9.6)
       commander
-      flexirest (>= 1.2.2)
+      flexirest (>= 1.4.6)
       toml
 
 GEM
