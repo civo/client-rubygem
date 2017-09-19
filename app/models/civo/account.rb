@@ -1,7 +1,7 @@
 module Civo
   class Account < Base
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts"
-    get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id", requires: [:id]
+    get :find, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id"
     get :stats, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/stats", requires: [:account_id]
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts", requires: [:name]
     put :reset, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id", requires: [:id]
