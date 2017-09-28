@@ -1,5 +1,5 @@
 module Civo
-  class DnsDomain < Base
+  class LoadBalancer < Base
     get :all, "/v2/loadbalancers"
     get :find, "/v2/loadbalancers/:id"
     post :create, "/v2/loadbalancers", required: [:hostname]
