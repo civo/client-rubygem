@@ -11,6 +11,7 @@ module Civo
     post :reboot, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/reboots", requires: [:id]
     post :hard_reboot, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/hard_reboots", requires: [:id]
     post :soft_reboot, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/soft_reboots", requires: [:id]
+    get :console, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/console", requires: [:id]
     put :rebuild, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/rebuild", requires: [:id]
     put :stop, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/stop", requires: [:id]
     put :start, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/start", requires: [:id]
