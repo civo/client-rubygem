@@ -5,6 +5,7 @@ module Civo
       post :create, "/v2/networks", required: [:label]
       put :update, "/v2/networks/:id"
       delete :remove, "/v2/networks/:id", required: [:id], send_delete_body: true
+      put :pseudo_migrate, "/v2/network-pseudo-migrate"
     else
       get :all, "/v1/networks"
       post :create, "/v1/networks", required: [:name]
