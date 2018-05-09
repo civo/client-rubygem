@@ -27,7 +27,7 @@ module Civo
       end
     end
 
-    def set_request_id
+    def set_request_id(name, request)
       if const_defined?("Current") && Current.request_id
         request.headers["X-CivoCom-RequestID"] = Current.request_id
       end
