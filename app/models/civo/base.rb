@@ -2,6 +2,7 @@ module Civo
   class Base < ::Flexirest::Base
     verbose!
     before_request :authorization_token
+    before_request :set_request_id
     before_request :administration_set_user
 
     private
@@ -23,6 +24,12 @@ module Civo
       account_id = (request.post_params[:account_id] || request.get_params[:account_id]) # Don't delete the param in case it's needed by an action
       if account_id.present?
         request.headers["X-Civo-AccountID"] = account_id
+      end
+    end
+
+    def set_request_id
+      if const_defined?("Current") && Current.request_id
+        request.headers["X-CivoCom-RequestID"] = Current.request_id
       end
     end
 
