@@ -18,6 +18,8 @@ module Civo
     put :upgrade, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/resize", requires: [:size, :id]
     put :restore, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/restore", requires: [:snapshot, :id]
     put :move_ip, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/ip/:ip", requires: [:ip, :id]
+    put :rescue, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/rescue", requires: [:id]
+    put :unrescue, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/unrescue", requires: [:id]
     if ENV["CIVO_API_VERSION"] == "2"
       put :firewall, "/v#{ENV["CIVO_API_VERSION"] || "1"}/instances/:id/firewall", requires: [:firewall_id, :id]
     else
