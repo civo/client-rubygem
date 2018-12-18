@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (1.1.1)
+    civo (1.1.5)
       commander
       flexirest (>= 1.4.6)
       toml
@@ -9,7 +9,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -20,15 +20,15 @@ GEM
     concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    faraday (0.13.1)
+    faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
-    flexirest (1.5.6)
+    flexirest (1.6.9)
       activesupport
       crack
       faraday
       multi_json
     highline (1.7.10)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     multi_json (1.13.1)
