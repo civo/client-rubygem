@@ -29,5 +29,6 @@ module Civo
     autoload :Team, "#{CIVO_ENGINE_ROOT}/app/models/civo/team"
     autoload :Template, "#{CIVO_ENGINE_ROOT}/app/models/civo/template"
     autoload :User, "#{CIVO_ENGINE_ROOT}/app/models/civo/user"
+    autoload :Volume, "#{CIVO_ENGINE_ROOT}/app/models/civo/volume"
   end
 end
