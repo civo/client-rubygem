@@ -1,7 +1,10 @@
 if defined?(Rails)
   require "civo/engine"
-  require "flexirest"
 end
+
+require "flexirest"
+ENV["CIVO_URL"] ||= "https://api.civo.com"
+ENV["CIVO_API_VERSION"] ||= "2"
 
 CIVO_ENGINE_ROOT = File.expand_path("#{File.dirname(__FILE__)}/../")
 
