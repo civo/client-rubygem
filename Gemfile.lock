@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (1.1.7)
+    civo (1.1.9)
       commander
       flexirest (>= 1.4.6)
       toml
@@ -34,7 +34,7 @@ GEM
     multipart-post (2.0.0)
     parslet (1.8.2)
     rake (11.0.1)
-    safe_yaml (1.0.4)
+    safe_yaml (1.0.5)
     thread_safe (0.3.6)
     toml (0.2.0)
       parslet (~> 1.8.0)
