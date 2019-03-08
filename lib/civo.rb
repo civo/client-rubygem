@@ -14,6 +14,7 @@ module Civo
     autoload :Action, "#{CIVO_ENGINE_ROOT}/app/models/civo/action"
     autoload :AuditLog, "#{CIVO_ENGINE_ROOT}/app/models/civo/audit_log"
     autoload :Base, "#{CIVO_ENGINE_ROOT}/app/models/civo/base"
+    autoload :Blueprint, "#{CIVO_ENGINE_ROOT}/app/models/civo/blueprint"
     autoload :Charge, "#{CIVO_ENGINE_ROOT}/app/models/civo/charge"
     autoload :DnsDomain, "#{CIVO_ENGINE_ROOT}/app/models/civo/dns_domain"
     autoload :DnsRecord, "#{CIVO_ENGINE_ROOT}/app/models/civo/dns_record"
