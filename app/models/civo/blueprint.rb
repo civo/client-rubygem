@@ -6,9 +6,10 @@ module Civo
     put :start, "/v#{ENV["CIVO_API_VERSION"] || "1"}/blueprints/:id/start", requires: [:id]
     put :stop, "/v#{ENV["CIVO_API_VERSION"] || "1"}/blueprints/:id/stop", requires: [:id]
     put :modify_template, "/v#{ENV["CIVO_API_VERSION"] || "1"}/blueprints/:id/template", requires: [:id, :checksum, :volume_id]
-  end
-
-  def to_partial_path
-    "civo/blueprint"
+    put :modify_template, "/v#{ENV["CIVO_API_VERSION"] || "1"}/blueprints/:id/template", requires: [:id, :volume_id]
+    
+    def to_partial_path
+      "civo/blueprint"
+    end
   end
 end
