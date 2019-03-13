@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (1.1.7)
+    civo (1.1.12)
       commander
       flexirest (>= 1.4.6)
       toml
@@ -16,7 +16,7 @@ GEM
       tzinfo (~> 1.1)
     commander (4.4.7)
       highline (~> 2.0.0)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     faraday (0.15.4)
@@ -27,14 +27,14 @@ GEM
       faraday
       multi_json
     highline (2.0.1)
-    i18n (1.5.3)
+    i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     multi_json (1.13.1)
     multipart-post (2.0.0)
     parslet (1.8.2)
     rake (11.0.1)
-    safe_yaml (1.0.4)
+    safe_yaml (1.0.5)
     thread_safe (0.3.6)
     toml (0.2.0)
       parslet (~> 1.8.0)
