@@ -8,6 +8,7 @@ module Civo
     put :reset, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id", requires: [:id]
     put :save, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id"
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id", requires: [:id], send_delete_body: true
+    get :active_paid_services, "/v#{ENV["CIVO_API_VERSION"] || "1"}/accounts/:id/active_paid_services", requires: [:id]
 
     def to_partial_path
       "civo/account"
