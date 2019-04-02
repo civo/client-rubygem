@@ -7,8 +7,7 @@ module Civo
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id", requires: [:id], send_delete_body: true
     put :start, "/v#{ENV["CIVO_API_VERSION"] || "1"}/blueprints/:id/start", requires: [:id]
     put :stop, "/v#{ENV["CIVO_API_VERSION"] || "1"}/blueprints/:id/stop", requires: [:id]
-    delete :destroy, "/v#{ENV["CIVO_API_VERSION"] || "1"}/blueprints/:id", requires: [:id]
-    
+
     def to_partial_path
       "civo/blueprint"
     end
