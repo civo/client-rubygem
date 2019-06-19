@@ -1,33 +1,14 @@
-# Civo CLI and Ruby API Library
+# Civo Ruby API Library
 
-This project includes both the command line utility and the Ruby API library for using in Rails projects (these may be split in the future, but for now they are unified).
+This project is the Ruby API library for using in Rails projects.
 
-There is a documentation available on each command using:
+## Command-Line Interface
 
-```sh
-civo help
-```
-
-You can get help on a subcommand by running:
+If you are wanting to use the [Civo command line interface](https://github.com/civo/cli), that's a separate project. However, as a brief quickstart, all you need to do is [install it](http://rubygems.org/gems/civo_cli), configure it with the token supplied when you signed up for your Civo account and you're ready to go:
 
 ```sh
-civo help sshkeys
-```
-
-## Quickstart
-
-To use the Civo command line interface, all you need to do is install it, configure it with the token supplied when you signed up for your Civo account and you're ready to go:
-
-```sh
-gem install civo
-civo tokens:save default ohsoijfdosjfoieu983y98u39h89h9ion98yh9
-```
-
-If you have multiple accounts you can choose to add more than one token and switch the default around as required:
-
-```sh
-civo tokens:save other sij0fjweiojfesnifds980jopnkjbjkn
-civo tokens:default other
+gem install civo_cli
+civo tokens:save default my_api_key_from_api_dot_civo_dot_com_goes_here
 ```
 
 ## API Library
@@ -60,9 +41,9 @@ instance = Civo::Instance.create(hostname: "text.example.com", size: size, regio
 
 The API library consists of a handful of [Flexirest](https://github.com/andyjeffries/flexirest) classes that implement the Civo API. There is full documentation on the API available at https://api.civo.com/doc/.
 
-## API Version 2
+## API Version 1
 
-To upgrade to version 2 of the API, you'd need to make the following changes:
+If you are hitting an old legacy v1 API (i.e. not running against api.civo.com), you'd need to make the following changes:
 
-1. Set `ENV["CIVO_API_VERSION"]` to be `2` in your initializer
-2. While legacy tokens are usable at the moment, in the future this will change to be an administrator API key and secret.  More to follow...
+1. Set `ENV["CIVO_API_VERSION"]` to be `1` in your initializer
+2. While legacy tokens are usable in v1 API servers at the moment, in the future this will change to be an administrator API key and secret.  More to follow...
