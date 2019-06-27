@@ -21,6 +21,7 @@ module Civo
     autoload :Firewall, "#{CIVO_ENGINE_ROOT}/app/models/civo/firewall"
     autoload :FirewallRule, "#{CIVO_ENGINE_ROOT}/app/models/civo/firewall_rule"
     autoload :Instance, "#{CIVO_ENGINE_ROOT}/app/models/civo/instance"
+    autoload :Kubernetes, "#{CIVO_ENGINE_ROOT}/app/models/civo/kubernetes"
     autoload :Ip, "#{CIVO_ENGINE_ROOT}/app/models/civo/ip"
     autoload :KPI, "#{CIVO_ENGINE_ROOT}/app/models/civo/kpi"
     autoload :Network, "#{CIVO_ENGINE_ROOT}/app/models/civo/network"
