@@ -4,6 +4,7 @@ module Civo
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id", requires: [:id]
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints", requires: [:name, :dsl_content, :template_id]
     put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id", requires: [:id]
+    put :stage, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id/stage", requires: [:id]
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id", requires: [:id], send_delete_body: true
     put :start, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id/start", requires: [:id]
     put :stop, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id/stop", requires: [:id]
