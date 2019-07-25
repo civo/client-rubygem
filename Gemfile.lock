@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (1.2.3)
+    civo (1.2.5)
       commander
       flexirest (>= 1.4.6)
       toml
@@ -21,7 +21,7 @@ GEM
       safe_yaml (~> 1.0.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
-    flexirest (1.7.8)
+    flexirest (1.7.9)
       activesupport
       crack
       faraday

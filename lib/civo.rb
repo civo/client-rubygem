@@ -24,6 +24,7 @@ module Civo
     autoload :Kubernetes, "#{CIVO_ENGINE_ROOT}/app/models/civo/kubernetes"
     autoload :Ip, "#{CIVO_ENGINE_ROOT}/app/models/civo/ip"
     autoload :KPI, "#{CIVO_ENGINE_ROOT}/app/models/civo/kpi"
+    autoload :LoadBalancer, "#{CIVO_ENGINE_ROOT}/app/models/civo/load_balancer"
     autoload :Network, "#{CIVO_ENGINE_ROOT}/app/models/civo/network"
     autoload :Quota, "#{CIVO_ENGINE_ROOT}/app/models/civo/quota"
     autoload :Region, "#{CIVO_ENGINE_ROOT}/app/models/civo/region"
