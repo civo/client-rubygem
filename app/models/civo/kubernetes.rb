@@ -3,6 +3,7 @@ module Civo
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetesclusters"
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetesclusters/:id", requires: [:id]
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetesclusters", requires: [:name]
+    post :recycle, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetesclusters/:id/recycle", requires: [:id, :hostname]
     put :update, "/v2/kubernetesclusters/:id"
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetesclusters/:id", requires: [:id], send_delete_body: true
 
