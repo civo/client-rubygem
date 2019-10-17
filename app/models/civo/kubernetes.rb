@@ -10,6 +10,8 @@ module Civo
     get :applications, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/applications"
     get :application, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/applications/:name", requires: [:name]
 
+    get :versions, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/versions"
+
     def to_partial_path
       "civo/kubernetes"
     end
