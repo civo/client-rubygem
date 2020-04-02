@@ -8,4 +8,6 @@ module Civo
       "civo/ip"
     end
   end
+
+  class IP < Ip ; end
 end
