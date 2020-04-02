@@ -9,4 +9,6 @@ module Civo
       "civo/dns_domain"
     end
   end
+
+  class DNSDomain < DnsDomain ; end
 end
