@@ -9,4 +9,6 @@ module Civo
       "civo/ssh_key"
     end
   end
+
+  class SSHKey < SshKey ; end
 end
