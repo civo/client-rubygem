@@ -39,7 +39,7 @@ instance = Civo::Instance.create(hostname: "text.example.com", size: size, regio
   template: template, public_ip: true, ssh_key: "default")
 ```
 
-The API library consists of a handful of [Flexirest](https://github.com/andyjeffries/flexirest) classes that implement the Civo API. There is full documentation on the API available at https://api.civo.com/doc/.
+The API library consists of a handful of [Flexirest](https://github.com/andyjeffries/flexirest) classes that implement the Civo API. There is full documentation on the API available at https://api.civo.com/.
 
 ## API Version 1
 
