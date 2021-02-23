@@ -7,6 +7,4 @@ module Civo
       "civo/disk_image"
     end
   end
-
-  class DiskImage < DiskImage ; end
 end
