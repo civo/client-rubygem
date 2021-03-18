@@ -4,7 +4,7 @@ This project is the Ruby API library for using in Rails projects.
 
 ## Command-Line Interface
 
-If you are wanting to use the [Civo command line interface](https://github.com/civo/cli), that's a separate project. However, as a brief quickstart, all you need to do is [install it](http://rubygems.org/gems/civo_cli), configure it with the token supplied when you signed up for your Civo account and you're ready to go:
+If you are wanting to use the [Civo command line interface](https://github.com/civo/cli), that's a separate project. However, as a brief quick-start, all you need to do is [install it](http://rubygems.org/gems/civo_cli), configure it with the token supplied when you signed up for your Civo account and you're ready to go:
 
 ```sh
 gem install civo_cli
@@ -41,7 +41,7 @@ instance = Civo::Instance.create(hostname: "text.example.com", size: size, regio
 
 The API library consists of a handful of [Flexirest](https://github.com/andyjeffries/flexirest) classes that implement the Civo API. There is full documentation on the API available at https://api.civo.com/doc/.
 
-## API Version 1
+## API Version 1
 
 If you are hitting an old legacy v1 API (i.e. not running against api.civo.com), you'd need to make the following changes:
 
