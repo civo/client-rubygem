@@ -42,7 +42,7 @@ GEM
     multipart-post (2.1.1)
     parslet (1.8.2)
     rake (13.0.0)
-    rexml (3.2.4)
+    rexml (3.2.5)
     ruby2_keywords (0.0.4)
     toml (0.2.0)
       parslet (~> 1.8.0)
