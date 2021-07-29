@@ -1,6 +1,7 @@
 module Civo
   class Firewall < Base
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/firewalls"
+    get :list_by_network, "/v#{ENV["CIVO_API_VERSION"] || "2"}/firewalls/list_by_network"
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/firewalls", required: [:name]
     if ENV["CIVO_API_VERSION"] == "2"
       put :update, "/v2/firewalls/:id"
