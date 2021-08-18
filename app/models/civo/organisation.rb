@@ -6,6 +6,7 @@ module Civo
   class Organisation < Base
     get :current, "/v#{ENV["CIVO_API_VERSION"] || "2"}/organisation"
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/organisation", requires: [:name]
+    put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/organisation", requires: [:name]
     get :accounts, "/v#{ENV["CIVO_API_VERSION"] || "2"}/organisation/accounts"
     post :add_account, "/v#{ENV["CIVO_API_VERSION"] || "2"}/organisation/accounts", requires: [:account_id]
   end
