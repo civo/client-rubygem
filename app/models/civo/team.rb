@@ -9,9 +9,9 @@ module Civo
     put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id", requires: %i{id}
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id", requires: %i{id}, send_delete_body: true
 
-    get :members "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members"
-    post :add_member "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members", requires: [:user_id]
-    post :update_member "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members/:member_id"
-    delete :remove_member "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members/:member_id"
+    get :members, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members"
+    post :add_member, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members", requires: [:user_id]
+    post :update_member, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members/:member_id"
+    delete :remove_member, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members/:member_id"
   end
 end

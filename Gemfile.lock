@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (1.4.5)
+    civo (1.4.6)
       commander
       flexirest (>= 1.4.6)
       toml
@@ -40,7 +40,7 @@ GEM
       concurrent-ruby (~> 1.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0225)
+    mime-types-data (3.2021.0704)
     minitest (5.14.4)
     multi_json (1.15.0)
     multipart-post (2.1.1)
