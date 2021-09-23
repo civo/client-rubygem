@@ -11,7 +11,7 @@ module Civo
 
     get :members, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members"
     post :add_member, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members", requires: [:user_id]
-    post :update_member, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members/:member_id"
+    put :update_member, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members/:member_id"
     delete :remove_member, "/v#{ENV["CIVO_API_VERSION"] || "2"}/teams/:id/members/:member_id"
   end
 end
