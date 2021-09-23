@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    civo (1.4.6)
+    civo (1.4.7)
       commander
       flexirest (>= 1.4.6)
       toml
@@ -9,27 +9,37 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4)
+    activesupport (6.1.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    commander (4.5.2)
+    commander (4.6.0)
       highline (~> 2.0.0)
     concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
-    faraday (1.4.1)
+    faraday (1.7.0)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
+      faraday-httpclient (~> 1.0.1)
       faraday-net_http (~> 1.0)
       faraday-net_http_persistent (~> 1.1)
+      faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
     faraday-excon (1.1.0)
+    faraday-httpclient (1.0.1)
     faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.1.0)
-    flexirest (1.10.5)
+    faraday-net_http_persistent (1.2.0)
+    faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
+    flexirest (1.10.6)
       activesupport
       crack
       faraday
@@ -44,12 +54,12 @@ GEM
     minitest (5.14.4)
     multi_json (1.15.0)
     multipart-post (2.1.1)
-    parslet (1.8.2)
+    parslet (2.0.0)
     rake (13.0.0)
     rexml (3.2.5)
-    ruby2_keywords (0.0.4)
-    toml (0.2.0)
-      parslet (~> 1.8.0)
+    ruby2_keywords (0.0.5)
+    toml (0.3.0)
+      parslet (>= 1.8.0, < 3.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     zeitwerk (2.4.2)
