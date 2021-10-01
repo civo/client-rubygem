@@ -5,7 +5,7 @@ module Civo
     put :save, "/v#{ENV["CIVO_API_VERSION"] || "2"}/webhooks/:id"
     post :test, "/v#{ENV["CIVO_API_VERSION"] || "2"}/webhooks/:id/test"
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/webhooks", required: [:name, :url]
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/webhooks/:id", send_delete_body: true
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/webhooks/:id"
   end
 
   def to_partial_path

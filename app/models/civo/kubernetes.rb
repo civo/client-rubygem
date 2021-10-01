@@ -5,7 +5,7 @@ module Civo
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/clusters", requires: [:name]
     post :recycle, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/clusters/:id/recycle", requires: [:id, :hostname]
     put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/clusters/:id"
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/clusters/:id", requires: [:id], send_delete_body: true
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/clusters/:id", requires: [:id]
 
     get :applications, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/applications"
     get :application, "/v#{ENV["CIVO_API_VERSION"] || "2"}/kubernetes/applications/:name", requires: [:name]

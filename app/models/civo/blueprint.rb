@@ -7,7 +7,7 @@ module Civo
     put :stage, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id/stage", requires: [:id]
     put :complete, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id/complete", requires: [:id]
     put :fail, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id/fail", requires: [:id]
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id", requires: [:id], send_delete_body: true
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id", requires: [:id]
     put :start, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id/start", requires: [:id]
     put :stop, "/v#{ENV["CIVO_API_VERSION"] || "2"}/blueprints/:id/stop", requires: [:id]
 

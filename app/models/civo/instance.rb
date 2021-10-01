@@ -7,7 +7,7 @@ module Civo
       defaults: {public_ip: true, initial_user: "civo"}
     put :tags, "/v2/instances/:id/tags"
     put :update, "/v2/instances/:id"
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id", requires: [:id], send_delete_body: true
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id", requires: [:id]
     post :reboot, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/reboots", requires: [:id]
     post :hard_reboot, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/hard_reboots", requires: [:id]
     post :soft_reboot, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/soft_reboots", requires: [:id]
