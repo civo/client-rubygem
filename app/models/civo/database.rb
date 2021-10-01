@@ -4,7 +4,7 @@ module Civo
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases", requires: [:name, :size, :region]
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id"
     put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id"
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id", requires: [:id], send_delete_body: true
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id", requires: [:id]
     put :upgrade, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/resize", requires: [:size, :id]
     put :restore, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/restore", requires: [:snapshot_id]
     get :snapshots, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/snapshots"

@@ -4,9 +4,9 @@ module Civo
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/firewalls", required: [:name]
     if ENV["CIVO_API_VERSION"] == "2"
       put :update, "/v2/firewalls/:id"
-      delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/firewalls/:id", required: [:id], send_delete_body: true
+      delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/firewalls/:id", required: [:id]
     else
-      delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/firewalls/:name", required: [:name], send_delete_body: true
+      delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/firewalls/:name", required: [:name]
     end
 
     def to_partial_path

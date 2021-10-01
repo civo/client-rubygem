@@ -4,7 +4,7 @@ module Civo
     get :find, "/v2/loadbalancers/:id"
     post :create, "/v2/loadbalancers", required: [:hostname]
     put :update, "/v2/loadbalancers/:id"
-    delete :remove, "/v2/loadbalancers/:id", required: [:id], send_delete_body: true
+    delete :remove, "/v2/loadbalancers/:id", required: [:id]
 
     def to_partial_path
       "civo/loadbalancer"
