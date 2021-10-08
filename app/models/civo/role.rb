@@ -6,6 +6,7 @@ module Civo
   class Role < Base
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/roles"
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/roles", requires: [:name, :permissions]
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/organisation/roles/:id"
+    put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/roles/:id", requires: %i{id}
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/roles/:id"
   end
 end
