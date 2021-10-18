@@ -9,6 +9,7 @@ module Civo
     put :flags, "/v#{ENV["CIVO_API_VERSION"] || "2"}/users/:id/flags"
     put :save, "/v#{ENV["CIVO_API_VERSION"] || "2"}/users/:id"
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/users/:id"
+    get :everything, "/v#{ENV["CIVO_API_VERSION"] || "2"}/users/:id/everything"
     if ENV["CIVO_API_VERSION"] == "2"
       get :all, "/v2/users"
       get :find_by_token, "/v2/users/token/:token"
