@@ -11,15 +11,45 @@ module Civo
     end
 
     def loadbalancers
-      [{ id: 23, name: "Johnny", algorithm: "round_robin" }, { id: 223, name: "Dep", algorithm: "weighted_fixed" }].to_json
+      [
+        {
+          id: 23,
+          name: "Johnny",
+          algorithm: "round_robin",
+          state: "available",
+          public_ipv4: "192.168.1.10",
+          private_ipv4: "10.10.10.10",
+          firewall_id: "86E2749F-8FA1-4D49-8833-299D02E585B8",
+          cluster_id: "96E2749F-8FA1-4D49-8833-299D02E585B8"
+        },
+        {
+          id: 223,
+          name: "Dep",
+          algorithm: "weighted_fixed",
+          state: "available",
+          public_ipv4: "192.168.1.30",
+          private_ipv4: "10.10.10.12",
+          firewall_id: "36E2749F-8FA1-4D49-8833-299D02E585B8",
+          cluster_id: "46E2749F-8FA1-4D49-8833-299D02E585B8"
+        }
+      ].to_json
     end
 
     def get_loadbalancer
-      { id: 23, name: "Johnny", algorithm: "round_robin" }.to_json
+      {
+        id: 23,
+        name: "Johnny",
+        algorithm: "round_robin",
+        state: "available",
+        public_ipv4: "192.168.1.10",
+        private_ipv4: "10.10.10.10",
+        firewall_id: "86E2749F-8FA1-4D49-8833-299D02E585B8",
+        cluster_id: "96E2749F-8FA1-4D49-8833-299D02E585B8"
+      }.to_json
     end
 
     def delete_loadbalancer
-      { result: "Ok" }.to_json
+      { result: "Success" }.to_json
     end
   end
 end
