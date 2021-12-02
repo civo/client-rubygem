@@ -44,7 +44,21 @@ module Civo
         public_ipv4: "192.168.1.10",
         private_ipv4: "10.10.10.10",
         firewall_id: "86E2749F-8FA1-4D49-8833-299D02E585B8",
-        cluster_id: "96E2749F-8FA1-4D49-8833-299D02E585B8"
+        cluster_id: "96E2749F-8FA1-4D49-8833-299D02E585B8",
+        endpoints: [
+          {
+            ip: "192.168.1.4",
+            protocol: "TCP",
+            source_port: 80,
+            target_port: 31579
+          },
+          {
+            ip: "192.168.1.5",
+            protocol: "TCP",
+            source_port: 80,
+            target_port: 31579
+          }
+        ]
       }.to_json
     end
 
