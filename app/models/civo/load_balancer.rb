@@ -1,7 +1,7 @@
 module Civo
   class LoadBalancer < Base
-    get :all, "/v2/loadbalancers", fake: :loadbalancers
-    get :find, "/v2/loadbalancers/:id", fake: :get_loadbalancer
+    get :all, "/v2/loadbalancers"
+    get :find, "/v2/loadbalancers/:id"
     post :create, "/v2/loadbalancers", required: [:hostname], fake: :get_loadbalancer
     put :update, "/v2/loadbalancers/:id", fake: :get_loadbalancer
     delete :remove, "/v2/loadbalancers/:id", required: [:id], fake: :delete_loadbalancer
