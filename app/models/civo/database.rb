@@ -17,11 +17,15 @@ module Civo
           "id": "5cc0696d-6663-48a9-8123-87adb997138c",
           "name": "Mysite-DB",
           "replicas": 2,
-          "size": 10,
+          "size": "g3.db.large",
           "software": "PostgreSQL",
           "software_version": "10.1",
           "public_ip": "84.127.44.100",
           "network_id": "5be0646d-6e63-4aa9-8123-87adb447138c",
+          "firewall_id": "e9682561-eaaf-4d01-ae12-322d5141b644",
+          "username": "abcde1234",
+          "password": "fghij567890",
+          "status": "ready",
           "snapshots": [
             {
               "id": "5cc0696d-6663-48a9-8123-87adb997138c",
@@ -34,21 +38,25 @@ module Civo
 
     def get_database
       {
-        "id": "5cc0696d-6663-48a9-8123-87adb997138c",
-        "name": "Mysite-DB",
-        "replicas": 2,
-        "size": 10,
-        "software": "PostgreSQL",
-        "software_version": "10.1",
-        "public_ip": "84.127.44.100",
-        "network_id": "5be0646d-6e63-4aa9-8123-87adb447138c",
-        "snapshots": [
-          {
-            "id": "5cc0696d-6663-48a9-8123-87adb997138c",
-            "timestamp": "2021-12-04T10:00:28Z"
-          }
-        ]
-      }.to_json
+          "id": "5cc0696d-6663-48a9-8123-87adb997138c",
+          "name": "Mysite-DB",
+          "replicas": 2,
+          "size": "g3.db.large",
+          "software": "PostgreSQL",
+          "software_version": "10.1",
+          "public_ip": "84.127.44.100",
+          "network_id": "5be0646d-6e63-4aa9-8123-87adb447138c",
+          "firewall_id": "e9682561-eaaf-4d01-ae12-322d5141b644",
+          "username": "abcde1234",
+          "password": "fghij567890",
+          "status": "ready",
+          "snapshots": [
+            {
+              "id": "5cc0696d-6663-48a9-8123-87adb997138c",
+              "timestamp": "2021-12-04T10:00:28Z"
+            }
+          ]
+        }.to_json
     end
 
     def create_database
@@ -56,11 +64,15 @@ module Civo
         "id": "5cc0696d-6663-48a9-8123-87adb997138c",
         "name": "Mysite-DB",
         "replicas": 2,
-        "size": 10,
+        "size": "g3.db.large",
         "software": "PostgreSQL",
         "software_version": "10.1",
         "public_ip": "84.127.44.100",
         "network_id": "5be0646d-6e63-4aa9-8123-87adb447138c",
+        "firewall_id": "e9682561-eaaf-4d01-ae12-322d5141b644",
+        "username": "abcde1234",
+        "password": "fghij567890",
+        "status": "building",
         "snapshots": []
       }.to_json
     end
@@ -70,11 +82,15 @@ module Civo
         "id": "5cc0696d-6663-48a9-8123-87adb997138c",
         "name": "Mysite-DB-renamed",
         "replicas": 3,
-        "size": 10,
+        "size": "g3.db.xlarge",
         "software": "PostgreSQL",
         "software_version": "10.1",
         "public_ip": "84.127.44.100",
         "network_id": "5be0646d-6e63-4aa9-8123-87adb447138c",
+        "firewall_id": "e9682561-eaaf-4d01-ae12-322d5141b644",
+        "username": "abcde1234",
+        "password": "fghij567890",
+        "status": "building",
         "snapshots": []
       }.to_json
     end
