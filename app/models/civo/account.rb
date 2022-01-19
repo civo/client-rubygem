@@ -9,6 +9,7 @@ module Civo
     put :save, "/v#{ENV["CIVO_API_VERSION"] || "2"}/accounts/:id"
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/accounts/:id", requires: [:id]
     get :active_paid_services, "/v#{ENV["CIVO_API_VERSION"] || "2"}/accounts/:id/active_paid_services", requires: [:id]
+    get :ids, "/v#{ENV["CIVO_API_VERSION"] || "2"}/accounts/ids"
 
     def to_partial_path
       "civo/account"
