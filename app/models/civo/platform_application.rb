@@ -1,5 +1,5 @@
 module Civo
-  class Platform < Base
+  class PlatformApplication < Base
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform", fake: :platforms
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform/:id", requires: [:id], fake: :find_platform
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform", requires: [:name, :region, :network_id, :size, :sshkey_ids], fake: :create_platform
@@ -7,7 +7,7 @@ module Civo
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform/:id", requires: [:id], fake: :remove_platform
 
     def to_partial_path
-      "civo/platform"
+      "civo/platform_application"
     end
 
     def platforms
