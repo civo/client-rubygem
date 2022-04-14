@@ -1,16 +1,16 @@
 module Civo
-  class Application < Base
-    get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications", fake: :applications
-    get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications/:id", requires: [:id], fake: :find_app
-    post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications", requires: [:name, :region, :network_id, :size, :sshkey_ids], fake: :create_app
-    put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications/:id", requires: [:id]
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications/:id", requires: [:id]
+  class Platform < Base
+    get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform", fake: :platforms
+    get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform/:id", requires: [:id], fake: :find_platform
+    post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform", requires: [:name, :region, :network_id, :size, :sshkey_ids], fake: :create_platform
+    put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform/:id", requires: [:id]
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform/:id", requires: [:id], fake: :remove_platform
 
     def to_partial_path
-      "civo/application"
+      "civo/platform"
     end
 
-    def applications
+    def platforms
       [
         {
           "id": "3a9a2c87-3e61-42fb-9dc2-3d365105d4e3",
@@ -53,7 +53,7 @@ module Civo
       ].to_json
     end
 
-    def find_app
+    def find_platform
       {
         "id": "3a9a2c87-3e61-42fb-9dc2-3d365105d4e3",
         "name": "demo-application-for-show",
@@ -103,7 +103,7 @@ module Civo
       }.to_json
     end
 
-    def create_app
+    def create_platform
       {
         "id": "c61a47dc-7a28-437f-ae3d-f812101478e0",
         "name": "created-demo-application",
@@ -125,6 +125,12 @@ module Civo
         "status": "building",
         "framework": "n/a"
       }.to_json
+    end
+
+    def remove_platform
+      {
+        result: "Success"
+    }.to_json
     end
   end
 end
