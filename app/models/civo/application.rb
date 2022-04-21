@@ -1,28 +1,26 @@
 module Civo
   class PlatformApplication < Base
-    get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform", fake: :platforms
-    get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform/:id", requires: [:id], fake: :find_platform
-    post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform", requires: [:name, :region, :network_id, :size, :sshkey_ids], fake: :create_platform
-    put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform/:id", requires: [:id]
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/platform/:id", requires: [:id], fake: :remove_platform
+    get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications", fake: :applications
+    get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications/:id", requires: [:id], fake: :find_application
+    post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications", requires: [:name, :region, :network_id, :size, :sshkey_ids], fake: :create_application
+    put :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications/:id", requires: [:id]
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications/:id", requires: [:id], fake: :remove_application
 
     def to_partial_path
-      "civo/platform_application"
+      "civo/application"
     end
 
-    def platforms
+    def applications
       [
         {
           "id": "3a9a2c87-3e61-42fb-9dc2-3d365105d4e3",
           "name": "demo-application",
           "network_id": "abe8ea57-727f-4fa4-a0ca-41793243e3df",
-          "firewall_id": "5452fd43-90ec-4eb8-933c-61e25341ebd7",
           "size": "small",
           "description": "Demo application description",
           "domains": [
             "demo-app.civo.app"
           ],
-          "ip_address": "143.227.12.34",
           "ssh_key_ids": [
             "key_id_1",
             "key_id_2"
@@ -53,18 +51,16 @@ module Civo
       ].to_json
     end
 
-    def find_platform
+    def find_application
       {
         "id": "3a9a2c87-3e61-42fb-9dc2-3d365105d4e3",
         "name": "demo-application-for-show",
         "network_id": "abe8ea57-727f-4fa4-a0ca-41793243e3df",
-        "firewall_id": "5452fd43-90ec-4eb8-933c-61e25341ebd7",
         "size": "small",
         "description": "Demo application description for the page",
         "domains": [
           "demo-app-for-show-page.civo.app",
         ],
-        "ip_address": "143.227.12.34",
         "ssh_key_ids": [
           "key_id_1",
           "key_id_2"
@@ -103,18 +99,16 @@ module Civo
       }.to_json
     end
 
-    def create_platform
+    def create_application
       {
         "id": "c61a47dc-7a28-437f-ae3d-f812101478e0",
         "name": "created-demo-application",
         "network_id": "abe8ea57-727f-4fa4-a0ca-41793243e3df",
-        "firewall_id": "5452fd43-90ec-4eb8-933c-61e25341ebd7",
         "size": "large",
         "description": "Newly created app description",
         "domains": [
           "created-demo-application.civo.app",
         ],
-        "ip_address": "111.222.33.44",
         "ssh_key_ids": [
           "key_id_1"
         ],
@@ -127,7 +121,7 @@ module Civo
       }.to_json
     end
 
-    def remove_platform
+    def remove_application
       {
         result: "Success"
     }.to_json
