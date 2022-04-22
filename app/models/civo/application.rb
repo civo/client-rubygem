@@ -1,5 +1,5 @@
 module Civo
-  class PlatformApplication < Base
+  class Application < Base
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications", fake: :applications
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications/:id", requires: [:id], fake: :find_application
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/applications", requires: [:name, :region, :network_id, :size, :sshkey_ids], fake: :create_application
