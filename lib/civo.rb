@@ -11,6 +11,7 @@ CIVO_ENGINE_ROOT = File.expand_path("#{File.dirname(__FILE__)}/../")
 require_relative "../app/models/civo/base"
 require_relative "../app/models/civo/account"
 require_relative "../app/models/civo/action"
+require_relative "../app/models/civo/application"
 require_relative "../app/models/civo/audit_log"
 require_relative "../app/models/civo/blueprint"
 require_relative "../app/models/civo/charge"
