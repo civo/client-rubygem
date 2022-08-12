@@ -2,7 +2,7 @@ module Civo
   class FirewallRule < Base
     if ENV["CIVO_API_VERSION"] == "2"
       get :all, "/v2/firewalls/:firewall_id/rules", required: [:firewall_id]
-      post :create, "/v2/firewalls/:firewall_id/rules", required: [:firewall_id, :protocol, :start_port,
+      post :create, "/v2/firewalls/:firewall_id/rules", required: [:firewall_id, :protocol, :ports,
         :cidr, :direction]
       delete :remove, "/v2/firewalls/:firewall_id/rules/:id", required: [:firewall_id, :id]
     else
