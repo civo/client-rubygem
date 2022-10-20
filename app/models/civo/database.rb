@@ -55,35 +55,32 @@ module Civo
       ].to_json
     end
 
-        def get_database
-          {
-            "id": "dd13bc84-1224-476e-8c0c-f15630ec9523",
-            "name": "dancing-in-the-moonlight-2",
-            "replicas": 1,
-            "size": "g3.db.xsmall",
-            "software": "MySQL",
-            "software_version": "8.0",
-            "public_ip": "",
-            "network_id": "b064d568-5869-427c-827a-77d48cde6a2e",
-            "firewall_id": "0c681c22-c449-43b4-a7dc-f3644a8d21f2",
-            "status": "Pending",
-            "snapshots": [
-              {
-                "id": "5cc0696d-6663-48a9-8123-87adb997138c",
-                "timestamp": "2021-12-04T10:00:28Z"
-              }
-            ]
+    def get_database
+      {
+        "id": "0e07ce5f-179b-44e0-83cf-47ae9ca7b4ad",
+        "name": "my-user-friendly-database-name",
+        "replicas": 1,
+        "size": "g3.db.xsmall",
+        "software": "MySQL",
+        "software_version": "8.0",
+        "public_ip": "10.90.100.30",
+        "port": 3306,
+        "username": "root",
+        "password": "h03K5gID9S39nZZd",
+        "network_id": "b064d568-5869-427c-827a-77d48cde6a2e",
+        "firewall_id": "0c681c22-c449-43b4-a7dc-f3644a8d21f2",
+        "status": "Ready"
       }.to_json
     end
 
     def create_database
       {
-        "id": "5cc0696d-6663-48a9-8123-87adb997138c",
+        "id": "0e07ce5f-179b-44e0-83cf-47ae9ca7b4ad",
         "name": "Mysite-DB",
         "replicas": 2,
-        "size": 10,
-        "software": "PostgreSQL",
-        "software_version": "10.1",
+        "size": "g3.db.xsmall",
+        "software": "MySQL",
+        "software_version": "8.0",
         "public_ip": "84.127.44.100",
         "network_id": "5be0646d-6e63-4aa9-8123-87adb447138c",
         "snapshots": []
