@@ -1,11 +1,11 @@
 module Civo
   class Database < Base
-    get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases", requires: [:region], fake: :databases
-    post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases", requires: [:name, :size, :region, :software, :network_id], fake: :create_database
-    get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id", requires: [:region], fake: :get_database
-    patch :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id", requires: [:region], fake: :update_database
-    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id", requires: [:id, :region], fake: :delete_database
-    post :restore, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/restore", requires: [:region, :snapshot_id], fake: :restore_database
+    get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases", fake: :databases
+    post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases", requires: [:name, :size, :software, :network_id], fake: :create_database
+    get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id", requires: [:id], fake: :get_database
+    patch :update, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id", fake: :update_database
+    delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id", requires: [:id], fake: :delete_database
+    post :restore, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/restore", requires: [:snapshot_id], fake: :restore_database
 
     def to_partial_path
       "civo/database"
