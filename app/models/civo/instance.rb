@@ -6,7 +6,7 @@ module Civo
     post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances", requires: [:hostname, :size, :region],
       defaults: {public_ip: true, initial_user: "civo"}
     put :tags, "/v2/instances/:id/tags"
-    put :update, "/v2/instances/:id"
+    put :update, "/v2/instances/:id", request_body_type: :json
     delete :remove, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id", requires: [:id]
     post :reboot, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/reboots", requires: [:id]
     post :hard_reboot, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/hard_reboots", requires: [:id]
