@@ -2,8 +2,9 @@ module Civo
   class Network < Base
     if ENV["CIVO_API_VERSION"] == "2"
       get :all, "/v2/networks"
-      post :create, "/v2/networks", required: [:label]
-      put :update, "/v2/networks/:id"
+      get :find, "/v2/networks/:id"
+      post :create, "/v2/networks", required: [:label], request_body_type: :json
+      put :update, "/v2/networks/:id", request_body_type: :json
       delete :remove, "/v2/networks/:id", required: [:id]
       put :pseudo_migrate, "/v2/network-pseudo-migrate"
     else
