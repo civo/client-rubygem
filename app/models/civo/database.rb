@@ -8,6 +8,7 @@ module Civo
     get :list_backups, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/backups", requires: [:id, :region]
     post :create_backup, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/backups", requires: [:id, :region]
     put :update_backup, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/backups", requires: [:id, :region]
+    delete :remove_backup, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/backups/:backup_id", requires: [:id, :region, :backup_id]
     post :restore, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/:id/restore", requires: [:id, :region]
     get :versions, "/v#{ENV["CIVO_API_VERSION"] || "2"}/databases/versions", requires: [:region]
 
