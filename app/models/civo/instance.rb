@@ -20,6 +20,7 @@ module Civo
     put :move_ip, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/ip/:ip", requires: [:ip, :id]
     put :rescue, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/rescue", requires: [:id]
     put :unrescue, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/unrescue", requires: [:id]
+    put :vnc, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/vnc", requires: [:id, :team_id, :region]
     if ENV["CIVO_API_VERSION"] == "2"
       put :firewall, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id/firewall", requires: [:firewall_id, :id]
     else
