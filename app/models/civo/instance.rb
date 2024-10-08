@@ -3,7 +3,7 @@ module Civo
     get :all, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances"
     get :high_cpu, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/high_cpu"
     get :find, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances/:id", requires: [:id]
-    post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances", requires: [:hostname, :size, :region],
+    post :create, "/v#{ENV["CIVO_API_VERSION"] || "2"}/instances", requires: [:hostname, :size, :region], request_body_type: :json,
       defaults: {public_ip: true, initial_user: "civo"}
     put :tags, "/v2/instances/:id/tags"
     put :update, "/v2/instances/:id"
