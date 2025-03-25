@@ -4,6 +4,7 @@ module Civo
     before_request :authorization_token
     before_request :set_request_id
     before_request :administration_set_user
+    before_request :set_reseller_id
 
     private
 
@@ -31,6 +32,10 @@ module Civo
       if const_defined?("Current") && Current.request_id
         request.headers["X-CivoCom-RequestID"] = Current.request_id
       end
+    end
+
+    def set_reseller_id(name, request)
+      request.headers["X-Reseller-Id"] = "#{ENV["RESELLER_ID"] || ""}"
     end
 
   end

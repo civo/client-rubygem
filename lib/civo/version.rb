@@ -1,3 +1,3 @@
 module Civo
-  VERSION = "1.5.35"
+  VERSION = "1.6"
 end
